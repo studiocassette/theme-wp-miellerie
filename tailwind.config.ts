@@ -18,6 +18,10 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				'script': ['var(--font-script)', 'cursive'],
+				'sans': ['var(--font-sans)', 'sans-serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -26,7 +30,8 @@ export default {
 				foreground: 'hsl(var(--foreground))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
-					foreground: 'hsl(var(--primary-foreground))'
+					foreground: 'hsl(var(--primary-foreground))',
+					glow: 'hsl(var(--primary-glow))'
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
@@ -51,6 +56,15 @@ export default {
 				card: {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
+				},
+				provence: {
+					blue: 'hsl(var(--provence-blue))',
+					lavender: 'hsl(var(--lavender))',
+					olive: 'hsl(var(--olive))',
+					garrigue: 'hsl(var(--garrigue))',
+					honey: 'hsl(var(--honey))',
+					'honey-dark': 'hsl(var(--honey-dark))',
+					mountain: 'hsl(var(--mountain))'
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
