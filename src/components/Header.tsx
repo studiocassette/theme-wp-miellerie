@@ -7,11 +7,11 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navigation = [
-    { name: 'Accueil', href: '#home' },
-    { name: 'Nos Miels', href: '#miels' },
-    { name: 'Notre Histoire', href: '#histoire' },
-    { name: 'Où nous trouver', href: '#contact' },
-    { name: 'Nos engagements', href: '#engagements' },
+    { name: 'Accueil', href: '/' },
+    { name: 'Nos Miels', href: '/#miels' },
+    { name: 'Notre Histoire', href: '/#histoire' },
+    { name: 'Où nous trouver', href: '/ou-nous-trouver' },
+    { name: 'Nos engagements', href: '/#engagements' },
   ];
 
   return (
