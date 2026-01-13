@@ -64,10 +64,10 @@ const NewsSection = () => {
                     </ul>
                   </div>
                   <div className="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
-                    <Button className="gradient-honey text-primary-foreground hover:shadow-honey transition-smooth">
+                    <Button className="bg-secondary hover:bg-secondary/90 text-primary hover:shadow-honey transition-smooth">
                       Découvrir notre miel primé
                     </Button>
-                    <Button variant="outline" className="border-primary text-primary hover:bg-primary/10">
+                    <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
                       <ExternalLink className="h-4 w-4 mr-2" />
                       Lire l'article complet
                     </Button>

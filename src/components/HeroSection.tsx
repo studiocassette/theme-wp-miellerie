@@ -33,7 +33,7 @@ const HeroSection = () => {
           {/* Main Title */}
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6 leading-tight">
             Miel 100% Bio
-            <span className="block font-script text-primary gradient-honey bg-clip-text text-transparent">
+            <span className="block font-serif text-secondary">
               de Provence
             </span>
           </h1>
@@ -44,14 +44,14 @@ const HeroSection = () => {
           </p>
 
           {/* Certifications */}
-          <div className="flex flex-wrap items-center space-x-4 mb-8">
-            <Badge variant="outline" className="border-primary text-primary">
+          <div className="flex flex-wrap items-center gap-3 mb-8">
+            <Badge variant="outline" className="border-secondary text-secondary bg-secondary/10">
               IGP Miels de Provence
             </Badge>
-            <Badge variant="outline" className="border-accent text-accent-foreground">
+            <Badge variant="outline" className="border-primary text-primary bg-primary/5">
               Agriculture Biologique
             </Badge>
-            <Badge variant="outline" className="border-secondary text-secondary-foreground">
+            <Badge variant="outline" className="border-primary text-primary bg-primary/5">
               FR-BIO-16
             </Badge>
           </div>
@@ -64,31 +64,31 @@ const HeroSection = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-            <Button size="lg" className="gradient-honey text-primary-foreground hover:shadow-honey transition-smooth">
+            <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-primary hover:shadow-honey transition-smooth">
               Découvrir nos miels
             </Button>
-            <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10">
-              Notre histoire
+            <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+              Nous contacter
             </Button>
           </div>
 
           {/* Stats */}
-          <div className="flex flex-wrap items-center space-x-8 mt-12 text-sm text-muted-foreground">
+          <div className="flex flex-wrap items-center gap-6 mt-12 text-sm text-muted-foreground">
             <div className="flex items-center space-x-2">
-              <div className="h-8 w-8 rounded-full bg-primary/10 flex items-center justify-center">
-                <Star className="h-4 w-4 text-primary" />
+              <div className="h-8 w-8 rounded-full bg-secondary/20 flex items-center justify-center">
+                <Star className="h-4 w-4 text-secondary" />
               </div>
               <span>300 ruches</span>
             </div>
             <div className="flex items-center space-x-2">
-              <div className="h-8 w-8 rounded-full bg-secondary/10 flex items-center justify-center">
+              <div className="h-8 w-8 rounded-full bg-secondary/20 flex items-center justify-center">
                 <Award className="h-4 w-4 text-secondary" />
               </div>
               <span>7 variétés de miel</span>
             </div>
             <div className="flex items-center space-x-2">
-              <div className="h-8 w-8 rounded-full bg-accent/10 flex items-center justify-center">
-                <MapPin className="h-4 w-4 text-accent" />
+              <div className="h-8 w-8 rounded-full bg-secondary/20 flex items-center justify-center">
+                <MapPin className="h-4 w-4 text-secondary" />
               </div>
               <span>Toute la Provence</span>
             </div>

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import beeLogo from '@/assets/bee-logo.png';
+import logo from '@/assets/logo-miellerie.png';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -15,23 +15,15 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border">
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16 lg:h-20">
+        <div className="flex justify-between items-center h-16 lg:h-24">
           {/* Logo */}
-          <div className="flex items-center space-x-3">
+          <a href="/" className="flex items-center">
             <img 
-              src={beeLogo} 
-              alt="Abeille Miellerie du Montaiguet" 
-              className="h-8 w-8 lg:h-10 lg:w-10"
+              src={logo} 
+              alt="Miellerie du Montaiguet" 
+              className="h-12 lg:h-16 w-auto"
             />
-            <div className="flex flex-col">
-              <h1 className="font-script text-xl lg:text-2xl font-bold text-primary">
-                Miellerie du Montaiguet
-              </h1>
-              <p className="text-xs text-muted-foreground hidden sm:block">
-                Antoine Riondet - Apiculteur
-              </p>
-            </div>
-          </div>
+          </a>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
@@ -39,12 +31,12 @@ const Header = () => {
               <a
                 key={item.name}
                 href={item.href}
-                className="text-foreground hover:text-primary transition-smooth font-medium"
+                className="text-foreground hover:text-secondary transition-smooth font-medium"
               >
                 {item.name}
               </a>
             ))}
-            <Button variant="default" className="gradient-honey text-primary-foreground hover:shadow-honey transition-smooth">
+            <Button variant="default" className="bg-secondary hover:bg-secondary/90 text-primary transition-smooth">
               Contact
             </Button>
           </div>
@@ -74,13 +66,13 @@ const Header = () => {
                 <a
                   key={item.name}
                   href={item.href}
-                  className="block text-foreground hover:text-primary transition-smooth font-medium"
+                  className="block text-foreground hover:text-secondary transition-smooth font-medium"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.name}
                 </a>
               ))}
-              <Button variant="default" className="w-full gradient-honey text-primary-foreground">
+              <Button variant="default" className="w-full bg-secondary text-primary">
                 Contact
               </Button>
             </div>

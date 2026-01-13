@@ -6,65 +6,68 @@
 All colors MUST be HSL.
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @layer base {
   :root {
-    --background: 42 38% 97%;
-    --foreground: 24 20% 15%;
+    --background: 45 30% 97%;
+    --foreground: 230 45% 20%;
 
-    --card: 45 40% 98%;
-    --card-foreground: 24 20% 15%;
+    --card: 45 35% 98%;
+    --card-foreground: 230 45% 20%;
 
-    --popover: 45 40% 98%;
-    --popover-foreground: 24 20% 15%;
+    --popover: 45 35% 98%;
+    --popover-foreground: 230 45% 20%;
 
-    /* Honey golden primary */
-    --primary: 42 88% 52%;
-    --primary-foreground: 45 40% 98%;
-    --primary-glow: 42 95% 65%;
+    /* Navy blue primary - from logo "Miellerie" */
+    --primary: 230 45% 25%;
+    --primary-foreground: 45 35% 98%;
+    --primary-glow: 230 50% 35%;
 
-    /* Provence lavender secondary */
-    --secondary: 245 58% 75%;
-    --secondary-foreground: 24 20% 15%;
+    /* Golden honey secondary - from logo "du Montaiguet" */
+    --secondary: 38 75% 55%;
+    --secondary-foreground: 230 45% 20%;
 
-    /* Provence olive muted */
-    --muted: 75 25% 88%;
-    --muted-foreground: 75 15% 45%;
+    /* Soft muted tones */
+    --muted: 45 20% 92%;
+    --muted-foreground: 230 20% 50%;
 
-    /* Garrigue green accent */
-    --accent: 95 35% 55%;
-    --accent-foreground: 45 40% 98%;
+    /* Golden accent */
+    --accent: 38 75% 55%;
+    --accent-foreground: 230 45% 20%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 42 25% 88%;
-    --input: 42 25% 92%;
-    --ring: 42 88% 52%;
+    --border: 230 15% 88%;
+    --input: 45 20% 94%;
+    --ring: 230 45% 25%;
 
-    /* Provence specific colors */
+    /* Brand colors from logo */
+    --navy: 230 45% 25%;
+    --navy-light: 230 40% 35%;
+    --honey-gold: 38 75% 55%;
+    --honey-gold-light: 40 80% 65%;
+    --honey-gold-dark: 35 70% 45%;
+
+    /* Provence accent colors */
     --provence-blue: 215 85% 65%;
-    --lavender: 245 58% 75%;
+    --lavender: 260 45% 70%;
     --olive: 75 35% 55%;
     --garrigue: 95 35% 55%;
-    --honey: 42 88% 52%;
-    --honey-dark: 35 75% 45%;
-    --mountain: 210 25% 35%;
 
     /* Gradients */
-    --gradient-honey: linear-gradient(135deg, hsl(var(--honey)), hsl(var(--primary-glow)));
+    --gradient-honey: linear-gradient(135deg, hsl(var(--honey-gold)), hsl(var(--honey-gold-light)));
+    --gradient-navy: linear-gradient(135deg, hsl(var(--navy)), hsl(var(--navy-light)));
     --gradient-provence: linear-gradient(135deg, hsl(var(--lavender)), hsl(var(--provence-blue)));
-    --gradient-garrigue: linear-gradient(135deg, hsl(var(--olive)), hsl(var(--garrigue)));
-    --gradient-sunset: linear-gradient(135deg, hsl(var(--honey)), hsl(var(--honey-dark)));
 
     /* Shadows */
-    --shadow-honey: 0 10px 30px -10px hsl(var(--honey) / 0.3);
-    --shadow-provence: 0 10px 30px -10px hsl(var(--lavender) / 0.2);
+    --shadow-honey: 0 10px 30px -10px hsl(var(--honey-gold) / 0.3);
+    --shadow-navy: 0 10px 30px -10px hsl(var(--navy) / 0.2);
     --shadow-elegant: 0 25px 50px -12px hsl(var(--foreground) / 0.1);
 
     /* Typography */
-    --font-script: 'Dancing Script', cursive;
+    --font-serif: 'Playfair Display', serif;
     --font-sans: 'Inter', sans-serif;
 
     /* Animations */
@@ -140,8 +143,12 @@ All colors MUST be HSL.
     font-family: var(--font-sans);
   }
 
+  .font-serif {
+    font-family: var(--font-serif);
+  }
+
   .font-script {
-    font-family: var(--font-script);
+    font-family: var(--font-serif);
   }
 
   .gradient-honey {
