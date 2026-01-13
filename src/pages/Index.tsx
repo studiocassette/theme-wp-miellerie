@@ -8,6 +8,7 @@ import heroImage from '@/assets/hero-antoine-apiculteur.jpg';
 import honeyCollection from '@/assets/honey-collection.jpg';
 import StoreMap from '@/components/StoreMap';
 import SiteHeader from '@/components/SiteHeader';
+import ContactForm from '@/components/ContactForm';
 
 const Index = () => {
   const [selectedStore, setSelectedStore] = useState<number | null>(null);
@@ -237,7 +238,7 @@ const Index = () => {
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl leading-relaxed">
-              Découvrez nos miels d'exception, récoltés avec passion dans les plus beaux terroirs de Provence par Antoine Riondet, apiculteur depuis 3 générations.
+              Découvrez nos miels d'exception, récoltés avec passion dans les plus beaux terroirs de Provence par Antoine Riondet.
             </p>
 
             <div className="flex flex-wrap items-center gap-3 mb-10">
@@ -406,12 +407,6 @@ const Index = () => {
             ))}
           </div>
 
-          <div className="text-center mt-12">
-            <Button className="bg-secondary text-secondary-foreground hover:bg-secondary/90 px-8 py-6 text-lg rounded-xl shadow-honey">
-              <Phone className="h-5 w-5 mr-2" />
-              Prendre rendez-vous
-            </Button>
-          </div>
         </div>
       </section>
 
@@ -461,6 +456,63 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Section Contact */}
+      <section id="contact" className="py-24 bg-primary/5">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+            <div>
+              <Badge className="bg-secondary/20 text-secondary border-none mb-4">Contact</Badge>
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-6">
+                Nous Contacter
+              </h2>
+              <p className="text-lg text-muted-foreground mb-8">
+                Une question sur nos miels ou nos points de vente ? 
+                N'hésitez pas à nous écrire, nous vous répondrons avec plaisir.
+              </p>
+              
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <div className="h-12 w-12 rounded-xl bg-secondary/20 flex items-center justify-center flex-shrink-0">
+                    <MapPin className="h-5 w-5 text-secondary" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-foreground mb-1">Adresse</h4>
+                    <p className="text-muted-foreground text-sm">
+                      3357 chemin de la plaine du Montaiguet<br />
+                      13590 Meyreuil
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-4">
+                  <div className="h-12 w-12 rounded-xl bg-secondary/20 flex items-center justify-center flex-shrink-0">
+                    <Phone className="h-5 w-5 text-secondary" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-foreground mb-1">Téléphone</h4>
+                    <p className="text-muted-foreground text-sm">04 42 58 XX XX</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-4">
+                  <div className="h-12 w-12 rounded-xl bg-secondary/20 flex items-center justify-center flex-shrink-0">
+                    <Mail className="h-5 w-5 text-secondary" />
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-foreground mb-1">Email</h4>
+                    <p className="text-muted-foreground text-sm">contact@miellerie-montaiguet.fr</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div>
+              <ContactForm />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="bg-primary text-primary-foreground py-20">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -473,7 +525,7 @@ const Index = () => {
                 className="h-24 w-auto brightness-0 invert mb-6"
               />
               <p className="text-primary-foreground/80 mb-6 max-w-md leading-relaxed">
-                Depuis trois générations, nous produisons des miels d'exception 
+                Nous produisons des miels d'exception 
                 dans le respect des traditions apicoles provençales et du bien-être de nos abeilles.
               </p>
               <div className="flex gap-4">
@@ -521,12 +573,6 @@ const Index = () => {
                     <p className="text-primary-foreground/60 text-xs mt-1">Appelez-nous pour visiter</p>
                   </div>
                 </div>
-                <Button 
-                  variant="outline" 
-                  className="border-secondary text-secondary bg-transparent hover:bg-secondary hover:text-primary w-full"
-                >
-                  Prendre rendez-vous
-                </Button>
               </div>
             </div>
           </div>
