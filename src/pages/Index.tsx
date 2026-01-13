@@ -53,43 +53,119 @@ const Index = () => {
   const stores = [
     {
       id: 1,
-      name: "La Miellerie du Montaiguet",
-      address: "3357 chemin de la plaine du Montaiguet, 13590 Meyreuil",
-      type: "Vente directe",
-      hours: "Sur rendez-vous",
+      name: "Ma Terre",
+      address: "4 rue Pierre de Coubertin, 13100 Aix en Provence",
+      type: "Magasin Bio",
+      hours: "9H00-19H00",
       icon: Store,
-      lat: 43.4656,
-      lng: 5.5012
+      lat: 43.52250353731567,
+      lng: 5.460940014562134,
+      phone: "04 42 26 83 65",
+      website: "https://www.materre.net/"
     },
     {
       id: 2,
-      name: "Marché d'Aix-en-Provence",
-      address: "Place Richelme, 13100 Aix-en-Provence",
-      type: "Marché",
-      hours: "Mardi, Jeudi, Samedi : 8h-13h",
-      icon: ShoppingBag,
-      lat: 43.5283,
-      lng: 5.4474
+      name: "Biocoop La Coumpagnie Puyricard",
+      address: "20 Chem. des Gervais, 13090 Aix-en-Provence",
+      type: "Magasin Bio",
+      hours: "9H00-19H30",
+      icon: Store,
+      lat: 43.56442955447747,
+      lng: 5.403697262639215,
+      phone: "04 42 21 06 45",
+      website: "https://www.biocoop-lacoumpagnie.fr/"
     },
     {
       id: 3,
-      name: "Biocoop Aix-en-Provence",
-      address: "25 Avenue des Belges, 13100 Aix-en-Provence",
-      type: "Magasin",
-      hours: "Lun-Sam : 9h-19h30",
+      name: "Biocoop La Coumpagnié - Aix Pioline",
+      address: "840 Av. du Camp de Menthe, 13090 Aix-en-Provence",
+      type: "Magasin Bio",
+      hours: "09:30-19:30",
       icon: Store,
-      lat: 43.5256,
-      lng: 5.4512
+      lat: 43.51076441298631,
+      lng: 5.414939652984122,
+      phone: "04 42 59 33 43",
+      website: "https://www.biocoop-lacoumpagnie.fr/"
     },
     {
       id: 4,
-      name: "La Ferme du Tholonet",
-      address: "Route de Cézanne, 13100 Le Tholonet",
-      type: "Magasin",
-      hours: "Mar-Dim : 9h-18h",
+      name: "Vival Val Saint André",
+      address: "Av. du Val Saint-André, 13100 Aix-en-Provence",
+      type: "Épicerie",
+      hours: "8H30-13H00 | 15H30-20H00",
       icon: Store,
-      lat: 43.5195,
-      lng: 5.5134
+      lat: 43.51636514862297,
+      lng: 5.47166897960665,
+      phone: "04 42 38 22 48",
+      website: "https://magasins.vival.fr/fr/s/vival-aix-en-provence"
+    },
+    {
+      id: 5,
+      name: "Marcel et Fils Venelles",
+      address: "102 Av. des Logissons, 13770 Venelles",
+      type: "Magasin Bio",
+      hours: "9H00-19H30",
+      icon: Store,
+      lat: 43.58329557039105,
+      lng: 5.473448318169898,
+      phone: "04 42 27 21 38",
+      website: "https://marceletfils.com/pages/venelles"
+    },
+    {
+      id: 6,
+      name: "Marcel et Fils Le Tholonet",
+      address: "Dom. l'Escapade RN7 Palette, 13100 Le Tholonet",
+      type: "Magasin Bio",
+      hours: "9H00-19H30",
+      icon: Store,
+      lat: 43.51123833883418,
+      lng: 5.4854049824629545,
+      phone: "04 42 66 80 80",
+      website: "https://marceletfils.com/pages/le-tholonet"
+    },
+    {
+      id: 7,
+      name: "Rotisserie des trois Sautets",
+      address: "53 Av. Henri Malacrida, 13100 Aix-en-Provence",
+      type: "Traiteur",
+      hours: "10H00-20H00",
+      icon: ShoppingBag,
+      lat: 43.51279739175061,
+      lng: 5.472775359736383,
+      phone: "06 07 39 41 91"
+    },
+    {
+      id: 8,
+      name: "La Pièce du Boucher",
+      address: "Centre commercial les rivaux, 13860 Peyrolles-en-Provence",
+      type: "Boucherie",
+      hours: "8H30-12H30 | 15H30-19H30",
+      icon: ShoppingBag,
+      lat: 43.644143318105876,
+      lng: 5.5778619253818995,
+      phone: "09 78 80 04 74"
+    },
+    {
+      id: 9,
+      name: "Le Maraîcher de Bimont",
+      address: "Place de la poste, 13126 Vauvenargues",
+      type: "Marché",
+      hours: "Samedi 8H00-12H00",
+      icon: ShoppingBag,
+      lat: 43.55536268329003,
+      lng: 5.598935660654329,
+      phone: "06 14 67 47 19",
+      website: "https://www.facebook.com/maraicherdebimont/"
+    },
+    {
+      id: 10,
+      name: "La Ferme de Puyricard",
+      address: "100 che Simone, 13540 Aix-en-Provence",
+      type: "Ferme",
+      hours: "Mar/Ven 15H30-18H00 | Dim 9H30-12H30",
+      icon: ShoppingBag,
+      lat: 43.58839650930449,
+      lng: 5.421537011964363
     }
   ];
 
