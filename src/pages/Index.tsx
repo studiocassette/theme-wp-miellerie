@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -5,8 +6,10 @@ import { Award, MapPin, Phone, Mail, Clock, Leaf, Star, Calendar, ArrowRight, St
 import logo from '@/assets/logo-miellerie.png';
 import heroImage from '@/assets/hero-antoine-apiculteur.jpg';
 import honeyCollection from '@/assets/honey-collection.jpg';
+import StoreMap from '@/components/StoreMap';
 
 const Index = () => {
+  const [selectedStore, setSelectedStore] = useState<number | null>(null);
   const honeyTypes = [
     {
       name: "Miel de Lavande",
@@ -48,32 +51,44 @@ const Index = () => {
 
   const stores = [
     {
+      id: 1,
       name: "La Miellerie du Montaiguet",
       address: "3357 chemin de la plaine du Montaiguet, 13590 Meyreuil",
       type: "Vente directe",
       hours: "Sur rendez-vous",
-      icon: Store
+      icon: Store,
+      lat: 43.4656,
+      lng: 5.5012
     },
     {
+      id: 2,
       name: "Marché d'Aix-en-Provence",
       address: "Place Richelme, 13100 Aix-en-Provence",
       type: "Marché",
       hours: "Mardi, Jeudi, Samedi : 8h-13h",
-      icon: ShoppingBag
+      icon: ShoppingBag,
+      lat: 43.5283,
+      lng: 5.4474
     },
     {
+      id: 3,
       name: "Biocoop Aix-en-Provence",
       address: "25 Avenue des Belges, 13100 Aix-en-Provence",
       type: "Magasin",
       hours: "Lun-Sam : 9h-19h30",
-      icon: Store
+      icon: Store,
+      lat: 43.5256,
+      lng: 5.4512
     },
     {
+      id: 4,
       name: "La Ferme du Tholonet",
       address: "Route de Cézanne, 13100 Le Tholonet",
       type: "Magasin",
       hours: "Mar-Dim : 9h-18h",
-      icon: Store
+      icon: Store,
+      lat: 43.5195,
+      lng: 5.5134
     }
   ];
 
@@ -258,19 +273,43 @@ const Index = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {stores.map((store, index) => (
-              <Card key={index} className="group hover:shadow-honey transition-smooth border-none bg-card overflow-hidden">
-                <CardContent className="p-6">
+          {/* Carte Interactive */}
+          <div className="mb-12">
+            <StoreMap 
+              stores={stores} 
+              selectedStore={selectedStore}
+              onSelectStore={setSelectedStore}
+            />
+          </div>
+
+          {/* Liste des Points de Vente */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+            {stores.map((store) => (
+              <Card 
+                key={store.id} 
+                className={`group cursor-pointer transition-smooth border-2 overflow-hidden ${
+                  selectedStore === store.id 
+                    ? 'border-secondary shadow-honey bg-secondary/5' 
+                    : 'border-transparent hover:shadow-honey bg-card'
+                }`}
+                onClick={() => setSelectedStore(store.id)}
+              >
+                <CardContent className="p-5">
                   <div className="flex items-start gap-4">
-                    <div className="h-14 w-14 rounded-xl bg-secondary/20 flex items-center justify-center flex-shrink-0">
-                      <store.icon className="h-6 w-6 text-secondary" />
+                    <div className={`h-12 w-12 rounded-xl flex items-center justify-center flex-shrink-0 transition-smooth ${
+                      selectedStore === store.id ? 'bg-secondary' : 'bg-secondary/20'
+                    }`}>
+                      <store.icon className={`h-5 w-5 transition-smooth ${
+                        selectedStore === store.id ? 'text-secondary-foreground' : 'text-secondary'
+                      }`} />
                     </div>
-                    <div className="flex-1">
-                      <h3 className="font-semibold text-foreground mb-1 group-hover:text-secondary transition-smooth">
+                    <div className="flex-1 min-w-0">
+                      <h3 className={`font-semibold mb-1 transition-smooth ${
+                        selectedStore === store.id ? 'text-secondary' : 'text-foreground group-hover:text-secondary'
+                      }`}>
                         {store.name}
                       </h3>
-                      <p className="text-sm text-muted-foreground mb-2">{store.address}</p>
+                      <p className="text-sm text-muted-foreground mb-2 truncate">{store.address}</p>
                       <div className="flex flex-wrap gap-2">
                         <Badge variant="outline" className="text-xs border-secondary/30 text-secondary">
                           {store.type}
