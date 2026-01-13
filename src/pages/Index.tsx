@@ -7,6 +7,7 @@ import logo from '@/assets/logo-miellerie.png';
 import heroImage from '@/assets/hero-antoine-apiculteur.jpg';
 import honeyCollection from '@/assets/honey-collection.jpg';
 import StoreMap from '@/components/StoreMap';
+import SiteHeader from '@/components/SiteHeader';
 
 const Index = () => {
   const [selectedStore, setSelectedStore] = useState<number | null>(null);
@@ -118,6 +119,9 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      {/* Header */}
+      <SiteHeader />
+      
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
