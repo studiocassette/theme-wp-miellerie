@@ -9,9 +9,7 @@ const Header = () => {
   const navigation = [
     { name: 'Accueil', href: '/' },
     { name: 'Nos Miels', href: '/#miels' },
-    { name: 'Notre Histoire', href: '/#histoire' },
     { name: 'Où nous trouver', href: '/ou-nous-trouver' },
-    { name: 'Nos engagements', href: '/#engagements' },
   ];
 
   return (
