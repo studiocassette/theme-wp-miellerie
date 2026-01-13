@@ -98,11 +98,11 @@ const HoneyCollection = () => {
               <CardContent>
                 <div className="space-y-3">
                   <div className="flex items-center text-sm text-muted-foreground">
-                    <Leaf className="h-4 w-4 mr-2 text-accent" />
+                    <Leaf className="h-4 w-4 mr-2 text-secondary" />
                     <span>{honey.usage}</span>
                   </div>
                   <div className="flex items-center text-sm text-muted-foreground">
-                    <Award className="h-4 w-4 mr-2 text-primary" />
+                    <Award className="h-4 w-4 mr-2 text-secondary" />
                     <span>Format 500g • Bio • IGP</span>
                   </div>
                   <Button 
@@ -120,14 +120,14 @@ const HoneyCollection = () => {
 
         {/* CTA Section */}
         <div className="text-center">
-          <div className="inline-flex items-center space-x-2 bg-primary/10 rounded-full px-6 py-3 mb-6">
-            <MapPin className="h-5 w-5 text-primary" />
-            <span className="text-primary font-medium">Vente directe à la miellerie</span>
+          <div className="inline-flex items-center space-x-2 bg-secondary/10 rounded-full px-6 py-3 mb-6">
+            <MapPin className="h-5 w-5 text-secondary" />
+            <span className="text-secondary font-medium">Vente directe à la miellerie</span>
           </div>
           <p className="text-muted-foreground mb-6">
             Retrouvez tous nos miels chez nos revendeurs partenaires ou directement à la miellerie
           </p>
-          <Button size="lg" className="gradient-honey text-primary-foreground hover:shadow-honey transition-smooth">
+          <Button size="lg" className="bg-secondary hover:bg-secondary/90 text-primary hover:shadow-honey transition-smooth">
             Trouver un point de vente
           </Button>
         </div>
