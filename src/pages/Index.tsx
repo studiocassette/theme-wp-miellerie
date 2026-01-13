@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -9,6 +10,7 @@ import honeyCollection from '@/assets/honey-collection.jpg';
 import StoreMap from '@/components/StoreMap';
 import SiteHeader from '@/components/SiteHeader';
 import ContactForm from '@/components/ContactForm';
+import { blogPosts } from '@/pages/Blog';
 
 const Index = () => {
   const [selectedStore, setSelectedStore] = useState<number | null>(null);
@@ -170,29 +172,6 @@ const Index = () => {
     }
   ];
 
-  const blogPosts = [
-    {
-      title: "Prix Agricole 2025 : Notre Miel de Lavande Primé",
-      excerpt: "Nous sommes fiers d'annoncer que notre miel de lavande a été récompensé par le Prix Agricole des Produits de Provence 2025...",
-      date: "12 Janvier 2025",
-      category: "Récompense",
-      image: "🏆"
-    },
-    {
-      title: "Préparation de la Saison Apicole 2025",
-      excerpt: "Avec le retour des beaux jours, nos abeilles se préparent pour une nouvelle saison de butinage dans les champs de lavande...",
-      date: "28 Décembre 2024",
-      category: "Actualité",
-      image: "🐝"
-    },
-    {
-      title: "Les Bienfaits du Miel de Romarin",
-      excerpt: "Découvrez pourquoi le miel de romarin est particulièrement recommandé pour ses vertus digestives et ses propriétés uniques...",
-      date: "15 Décembre 2024",
-      category: "Santé",
-      image: "🌱"
-    }
-  ];
 
   return (
     <div className="min-h-screen bg-background">
@@ -425,32 +404,34 @@ const Index = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            {blogPosts.map((post, index) => (
-              <Card key={index} className="group hover:shadow-elegant transition-smooth border-none bg-card overflow-hidden cursor-pointer">
-                <div className="h-40 bg-gradient-to-br from-secondary/20 to-primary/10 flex items-center justify-center">
-                  <span className="text-6xl">{post.image}</span>
-                </div>
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-2 mb-3">
-                    <Badge variant="outline" className="text-xs border-secondary/30 text-secondary">
-                      {post.category}
-                    </Badge>
-                    <span className="text-xs text-muted-foreground flex items-center gap-1">
-                      <Calendar className="h-3 w-3" />
-                      {post.date}
-                    </span>
+            {blogPosts.map((post) => (
+              <Link key={post.id} to={`/blog/${post.id}`}>
+                <Card className="group hover:shadow-elegant transition-smooth border-none bg-card overflow-hidden cursor-pointer h-full">
+                  <div className="h-40 bg-gradient-to-br from-secondary/20 to-primary/10 flex items-center justify-center">
+                    <span className="text-6xl">{post.image}</span>
                   </div>
-                  <h3 className="font-semibold text-foreground mb-2 group-hover:text-secondary transition-smooth line-clamp-2">
-                    {post.title}
-                  </h3>
-                  <p className="text-sm text-muted-foreground line-clamp-3 mb-4">
-                    {post.excerpt}
-                  </p>
-                  <div className="flex items-center text-secondary text-sm font-medium group-hover:gap-2 transition-all">
-                    Lire la suite <ArrowRight className="h-4 w-4 ml-1" />
-                  </div>
-                </CardContent>
-              </Card>
+                  <CardContent className="p-6">
+                    <div className="flex items-center gap-2 mb-3">
+                      <Badge variant="outline" className="text-xs border-secondary/30 text-secondary">
+                        {post.category}
+                      </Badge>
+                      <span className="text-xs text-muted-foreground flex items-center gap-1">
+                        <Calendar className="h-3 w-3" />
+                        {post.date}
+                      </span>
+                    </div>
+                    <h3 className="font-semibold text-foreground mb-2 group-hover:text-secondary transition-smooth line-clamp-2">
+                      {post.title}
+                    </h3>
+                    <p className="text-sm text-muted-foreground line-clamp-3 mb-4">
+                      {post.excerpt}
+                    </p>
+                    <div className="flex items-center text-secondary text-sm font-medium group-hover:gap-2 transition-all">
+                      Lire la suite <ArrowRight className="h-4 w-4 ml-1" />
+                    </div>
+                  </CardContent>
+                </Card>
+              </Link>
             ))}
           </div>
         </div>
