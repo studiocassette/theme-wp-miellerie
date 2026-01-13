@@ -21,7 +21,7 @@ const Header = () => {
             <img 
               src={logo} 
               alt="Miellerie du Montaiguet" 
-              className="h-12 lg:h-16 w-auto"
+              className="h-14 lg:h-20 w-auto"
             />
           </a>
 
