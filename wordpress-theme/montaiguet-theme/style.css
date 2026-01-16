@@ -93,6 +93,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+body.menu-open {
+  overflow: hidden;
+}
+
 .font-serif {
   font-family: var(--font-serif);
 }
