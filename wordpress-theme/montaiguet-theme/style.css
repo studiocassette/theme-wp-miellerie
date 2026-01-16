@@ -1,0 +1,209 @@
+/*
+Theme Name: Miellerie du Montaiguet
+Theme URI: https://miellerie-montaiguet.fr
+Author: Antoine Riondet
+Author URI: https://miellerie-montaiguet.fr
+Description: Thème WordPress élégant et moderne pour la Miellerie du Montaiguet. Site vitrine pour miels artisanaux bio de Provence avec carte interactive des points de vente, blog et formulaire de contact.
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: montaiguet
+Tags: honey, provence, bio, artisan, one-column, custom-colors, custom-menu, featured-images, post-formats, sticky-post, threaded-comments, translation-ready
+
+Miellerie du Montaiguet WordPress Theme
+*/
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* CSS Variables - Design System */
+:root {
+  /* Colors - HSL Format */
+  --background: 45 30% 97%;
+  --foreground: 230 45% 20%;
+  --card: 45 35% 98%;
+  --card-foreground: 230 45% 20%;
+  
+  /* Navy blue primary - from logo */
+  --primary: 230 45% 25%;
+  --primary-foreground: 45 35% 98%;
+  --primary-glow: 230 50% 35%;
+  
+  /* Golden honey secondary */
+  --secondary: 38 75% 55%;
+  --secondary-foreground: 230 45% 20%;
+  
+  /* Muted tones */
+  --muted: 45 20% 92%;
+  --muted-foreground: 230 20% 50%;
+  
+  /* Accent */
+  --accent: 38 75% 55%;
+  --accent-foreground: 230 45% 20%;
+  
+  /* Border & Input */
+  --border: 230 15% 88%;
+  --input: 45 20% 94%;
+  --ring: 230 45% 25%;
+  
+  /* Brand colors */
+  --navy: 230 45% 25%;
+  --navy-light: 230 40% 35%;
+  --honey-gold: 38 75% 55%;
+  --honey-gold-light: 40 80% 65%;
+  --honey-gold-dark: 35 70% 45%;
+  
+  /* Provence accent colors */
+  --provence-blue: 215 85% 65%;
+  --lavender: 260 45% 70%;
+  --olive: 75 35% 55%;
+  --garrigue: 95 35% 55%;
+  
+  /* Shadows */
+  --shadow-honey: 0 10px 30px -10px hsl(var(--honey-gold) / 0.3);
+  --shadow-elegant: 0 25px 50px -12px hsl(var(--foreground) / 0.1);
+  
+  /* Typography */
+  --font-serif: 'Playfair Display', serif;
+  --font-sans: 'Inter', sans-serif;
+  
+  /* Animations */
+  --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  
+  --radius: 0.5rem;
+}
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.3);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.5);
+}
+
+/* Utility Classes */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.transition-smooth {
+  transition: var(--transition-smooth);
+}
+
+.shadow-honey {
+  box-shadow: var(--shadow-honey);
+}
+
+.shadow-elegant {
+  box-shadow: var(--shadow-elegant);
+}
+
+/* WordPress Core Styles */
+.alignleft {
+  float: left;
+  margin-right: 1.5em;
+}
+
+.alignright {
+  float: right;
+  margin-left: 1.5em;
+}
+
+.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.wp-caption {
+  max-width: 100%;
+}
+
+.wp-caption-text {
+  font-size: 0.875rem;
+  color: hsl(var(--muted-foreground));
+  margin-top: 0.5rem;
+}
+
+.sticky {
+  /* Sticky post styles */
+}
+
+.bypostauthor {
+  /* Author highlight */
+}
+
+/* Screen reader text */
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+.screen-reader-text:focus {
+  background-color: hsl(var(--background));
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  color: hsl(var(--foreground));
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+}
