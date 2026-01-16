@@ -3,12 +3,36 @@
  */
 
 (function($) {
-  'use strict';
+  'use strict'  
+  // Header scroll effect
+  $(window).on('scroll', function() {
+    var header = $('#site-header');
+    if ($(this).scrollTop() > 50) {
+      header.addClass('scrolled');
+    } else {
+      header.removeClass('scrolled');
+    }
+  });
   
   // Mobile Menu Toggle
-  $('.mobile-menu-toggle').on('click', function() {
+  $('#mobile-menu-toggle').on('click', function() {
     $(this).toggleClass('active');
-    $('.menu-container').toggleClass('active');
+    $('#mobile-menu-overlay').toggleClass('active');
+    $('body').toggleClass('menu-open');
+  });
+  
+  // Close mobile menu when clicking backdrop
+  $('.mobile-menu-backdrop').on('click', function() {
+    $('#mobile-menu-toggle').removeClass('active');
+    $('#mobile-menu-overlay').removeClass('active');
+    $('body').removeClass('menu-open');
+  });
+  
+  // Close mobile menu when clicking on a link
+  $('.mobile-menu-list a, .btn-contact-mobile').on('click', function() {
+    $('#mobile-menu-toggle').removeClass('active');
+    $('#mobile-menu-overlay').removeClass('active');
+    $('body').removeClass('menu-open');
   });
   
   // Smooth scroll for anchor links
@@ -17,13 +41,12 @@
     
     if (target.length) {
       e.preventDefault();
-      $('html, body').stop().animate({
-        scrollTop: target.offset().top - 80
-      }, 800);
+      var headerHeight = $('.site-header').outerHeight();
+      var scrollTop = target.offset().top - headerHeight - 20;
       
-      // Close mobile menu if open
-      $('.menu-container').removeClass('active');
-      $('.mobile-menu-toggle').removeClass('active');
+      $('html, body').stop().animate({
+        scrollTop: scrollTop
+      }, 800);
     }
   });
   
@@ -110,14 +133,5 @@
   
   $(window).on('scroll', fadeInOnScroll);
   fadeInOnScroll(); // Initial check
-  
-  // Header scroll effect
-  $(window).on('scroll', function() {
-    if ($(this).scrollTop() > 100) {
-      $('.site-header').addClass('scrolled');
-    } else {
-      $('.site-header').removeClass('scrolled');
-    }
-  });
   
 })(jQuery);
