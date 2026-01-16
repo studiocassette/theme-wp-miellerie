@@ -1474,7 +1474,8 @@ section {
 
 @media (max-width: 768px) {
   .hero-section {
-    margin-top: 70px;
+    margin-top: 0;
+    padding-top: 5rem;
   }
   
   .hero-overlay {
@@ -1486,7 +1487,7 @@ section {
   }
   
   .hero-title {
-    font-size: 2rem;
+    font-size: 1.875rem;
   }
   
   .hero-description {
