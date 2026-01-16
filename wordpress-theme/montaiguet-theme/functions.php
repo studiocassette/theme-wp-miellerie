@@ -72,6 +72,10 @@ function montaiguet_enqueue_scripts() {
     // Mapbox initialization
     wp_enqueue_script('montaiguet-mapbox', get_template_directory_uri() . '/assets/js/mapbox-init.js', array('jquery', 'mapbox-gl-js'), '1.0.0', true);
     
+    // Pass Mapbox token to JavaScript
+    $mapbox_token = get_theme_mod('montaiguet_mapbox_token', '');
+    wp_localize_script('montaiguet-mapbox', 'MAPBOX_TOKEN', $mapbox_token);
+    
     // Localize script for AJAX
     wp_localize_script('montaiguet-main', 'montaiguet_ajax', array(
         'ajax_url' => admin_url('admin-ajax.php'),
