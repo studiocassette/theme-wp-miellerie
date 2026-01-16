@@ -20,7 +20,7 @@ get_header();
             
             <div class="single-post-container">
                 <!-- Back to blog link -->
-                <a href="<?php echo get_permalink(get_option('page_for_posts')); ?>" class="back-to-blog">
+                <a href="<?php echo esc_url(home_url('/#blog')); ?>" class="back-to-blog">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="m12 19-7-7 7-7"></path>
                         <path d="M19 12H5"></path>
