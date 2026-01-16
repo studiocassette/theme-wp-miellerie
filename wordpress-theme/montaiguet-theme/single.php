@@ -17,13 +17,12 @@ get_header();
             $prev_post = get_previous_post();
             $next_post = get_next_post();
             ?>
-            
+
             <div class="single-post-container">
                 <!-- Back to blog link -->
                 <a href="<?php echo esc_url(home_url('/#blog')); ?>" class="back-to-blog">
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="m12 19-7-7 7-7"></path>
-                        <path d="M19 12H5"></path>
+                        <path d="m15 18-6-6 6-6"></path>
                     </svg>
                     Retour au blog
                 </a>
@@ -36,7 +35,7 @@ get_header();
                                 <?php echo esc_html($category[0]->name); ?>
                             </span>
                         <?php endif; ?>
-                        
+
                         <span class="post-date-meta">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                 <path d="M8 2v4"></path>
@@ -47,7 +46,7 @@ get_header();
                             <?php echo get_the_date('j F Y'); ?>
                         </span>
                     </div>
-                    
+
                     <h1 class="post-title"><?php the_title(); ?></h1>
                 </header>
 
@@ -75,8 +74,7 @@ get_header();
                                 <div class="nav-link-inner">
                                     <span class="nav-label">
                                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <path d="m12 19-7-7 7-7"></path>
-                                            <path d="M19 12H5"></path>
+                                            <path d="m15 18-6-6 6-6"></path>
                                         </svg>
                                         Article précédent
                                     </span>
@@ -86,15 +84,14 @@ get_header();
                         <?php else : ?>
                             <div class="nav-spacer"></div>
                         <?php endif; ?>
-                        
+
                         <?php if ($next_post) : ?>
                             <a href="<?php echo get_permalink($next_post); ?>" class="nav-link nav-next">
                                 <div class="nav-link-inner">
                                     <span class="nav-label">
                                         Article suivant
                                         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                            <path d="M5 12h14"></path>
-                                            <path d="m12 5 7 7-7 7"></path>
+                                            <path d="m9 18 6-6-6-6"></path>
                                         </svg>
                                     </span>
                                     <span class="nav-title"><?php echo get_the_title($next_post); ?></span>
