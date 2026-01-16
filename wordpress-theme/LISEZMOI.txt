@@ -1,0 +1,151 @@
+╔══════════════════════════════════════════════════════════════════════════╗
+║                                                                          ║
+║        THÈME WORDPRESS - MIELLERIE DU MONTAIGUET                        ║
+║        Conversion du site Lovable en thème WordPress                    ║
+║                                                                          ║
+╚══════════════════════════════════════════════════════════════════════════╝
+
+📦 CONTENU DE LA LIVRAISON
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. montaiguet-theme.zip (491 KB)
+   → Thème WordPress complet prêt à installer
+
+2. INSTRUCTIONS_INSTALLATION.md
+   → Guide complet d'installation étape par étape en français
+
+3. LIVRAISON_COMPLETE.md
+   → Documentation technique complète du thème
+
+4. README.txt
+   → Documentation WordPress standard
+
+
+✨ FONCTIONNALITÉS PRINCIPALES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ Design moderne et responsive (mobile, tablette, desktop)
+✅ Page d'accueil complète avec 5 sections :
+   - Hero avec image et badges de certification
+   - Collection de miels avec grille responsive
+   - Points de vente avec carte interactive Mapbox
+   - Blog/Actualités (3 derniers articles)
+   - Formulaire de contact fonctionnel
+
+✅ Custom Post Types WordPress :
+   - "Miels" avec champs personnalisés (icône, usage, format)
+   - "Points de Vente" avec coordonnées GPS pour la carte
+
+✅ Carte interactive Mapbox
+   - Markers personnalisés
+   - Synchronisation avec les cartes cliquables
+   - Popups avec informations des magasins
+
+✅ Formulaire de contact intégré
+   - Envoi AJAX sans rechargement
+   - Validation serveur
+   - Messages de succès/erreur
+
+✅ Personnalisation via WordPress Customizer
+   - Token Mapbox
+   - Coordonnées de contact
+   - Texte Hero Section
+
+
+🚀 INSTALLATION RAPIDE (5 MINUTES)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. INSTALLER LE THÈME
+   WordPress Admin → Apparence → Thèmes → Ajouter → Téléverser
+   → Choisir montaiguet-theme.zip → Installer → Activer
+
+2. CONFIGURER MAPBOX (Important !)
+   - Créer compte gratuit sur mapbox.com
+   - Copier le "Default public token"
+   - WordPress → Apparence → Personnaliser → Paramètres Miellerie
+   - Coller le token → Publier
+
+3. CRÉER PAGE D'ACCUEIL
+   - Pages → Ajouter → Publier
+   - Réglages → Lecture → Page statique → Choisir la page
+
+4. AJOUTER DU CONTENU
+   - Miels → Ajouter (minimum 3)
+   - Points de Vente → Ajouter (avec GPS)
+   - Articles → Ajouter (2-3 articles)
+
+✅ Votre site est prêt !
+
+
+📋 FICHIERS IMPORTANTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+montaiguet-theme/
+├── style.css              ← CSS principal + en-tête thème
+├── functions.php          ← Configuration WordPress
+├── front-page.php         ← Page d'accueil (⭐ Important)
+├── header.php / footer.php
+├── inc/
+│   ├── custom-post-types.php   ← Miels & Points de vente
+│   ├── custom-fields.php       ← Champs personnalisés
+│   └── customizer.php          ← Options du thème
+└── assets/
+    ├── css/custom.css          ← Styles étendus
+    ├── js/main.js              ← JavaScript principal
+    ├── js/mapbox-init.js       ← Carte interactive
+    └── images/                 ← Images du thème
+
+
+🎨 DESIGN
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Couleurs principales :
+- Bleu marine (#3a4156) - du logo "Miellerie"
+- Doré miel (#d4a843) - du logo "du Montaiguet"
+- Beige clair - fond
+- Provence : lavande, olive, garrigue
+
+Polices :
+- Inter (sans-serif) - texte
+- Playfair Display (serif) - titres
+
+
+📞 SUPPORT
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Email : contact@miellerie-montaiguet.fr
+Téléphone : 04 42 58 XX XX
+
+
+⚠️ POINTS IMPORTANTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. TOKEN MAPBOX OBLIGATOIRE pour afficher la carte
+   → Gratuit sur mapbox.com
+
+2. COORDONNÉES GPS requises pour les points de vente
+   → Obtenir sur Google Maps (clic droit → coordonnées)
+
+3. FORMULAIRE DE CONTACT peut nécessiter plugin SMTP
+   → Installer "WP Mail SMTP" si emails ne fonctionnent pas
+
+4. IMAGES À OPTIMISER avant upload
+   → Max 200 KB par image
+   → Format JPG pour photos, PNG pour logos
+
+
+📖 DOCUMENTATION COMPLÈTE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Voir INSTRUCTIONS_INSTALLATION.md pour le guide complet pas à pas
+Voir LIVRAISON_COMPLETE.md pour la documentation technique
+
+
+🎉 BON SUCCÈS AVEC VOTRE SITE !
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Version : 1.0.0
+Date : 16 janvier 2025
+Licence : GPL v2 ou supérieur
+
+© 2025 Miellerie du Montaiguet
