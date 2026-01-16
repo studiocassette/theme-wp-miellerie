@@ -9,53 +9,104 @@
 get_header();
 ?>
 
-<main id="main" class="site-main single-post">
+<main id="main" class="site-main single-post-page">
     <div class="container">
         <?php
         while (have_posts()) : the_post();
+            $category = get_the_category();
+            $prev_post = get_previous_post();
+            $next_post = get_next_post();
             ?>
-            <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                <header class="entry-header">
-                    <h1 class="entry-title"><?php the_title(); ?></h1>
-                    <div class="entry-meta">
-                        <span class="posted-on"><?php echo get_the_date(); ?></span>
-                        <span class="byline"> par <?php the_author(); ?></span>
-                        <?php if (has_category()) : ?>
-                            <span class="categories"><?php the_category(', '); ?></span>
+            
+            <div class="single-post-container">
+                <!-- Back to blog link -->
+                <a href="<?php echo get_permalink(get_option('page_for_posts')); ?>" class="back-to-blog">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="m12 19-7-7 7-7"></path>
+                        <path d="M19 12H5"></path>
+                    </svg>
+                    Retour au blog
+                </a>
+
+                <!-- Post header -->
+                <header class="post-header">
+                    <div class="post-meta-top">
+                        <?php if (!empty($category)) : ?>
+                            <span class="post-category-badge">
+                                <?php echo esc_html($category[0]->name); ?>
+                            </span>
                         <?php endif; ?>
+                        
+                        <span class="post-date-meta">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M8 2v4"></path>
+                                <path d="M16 2v4"></path>
+                                <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                                <path d="M3 10h18"></path>
+                            </svg>
+                            <?php echo get_the_date('j F Y'); ?>
+                        </span>
                     </div>
+                    
+                    <h1 class="post-title"><?php the_title(); ?></h1>
                 </header>
-                
+
+                <!-- Featured image -->
                 <?php if (has_post_thumbnail()) : ?>
-                    <div class="entry-thumbnail">
+                    <div class="post-featured-image">
                         <?php the_post_thumbnail('large'); ?>
                     </div>
+                <?php else : ?>
+                    <div class="post-featured-placeholder">
+                        <span class="placeholder-emoji">📝</span>
+                    </div>
                 <?php endif; ?>
-                
-                <div class="entry-content">
+
+                <!-- Post content -->
+                <article class="post-content">
                     <?php the_content(); ?>
-                </div>
-                
-                <?php if (has_tag()) : ?>
-                    <footer class="entry-footer">
-                        <div class="tags">
-                            <?php the_tags('<span class="tags-label">Tags: </span>', ', '); ?>
-                        </div>
-                    </footer>
-                <?php endif; ?>
-            </article>
-            
+                </article>
+
+                <!-- Post navigation -->
+                <nav class="post-navigation">
+                    <div class="nav-links">
+                        <?php if ($prev_post) : ?>
+                            <a href="<?php echo get_permalink($prev_post); ?>" class="nav-link nav-prev">
+                                <div class="nav-link-inner">
+                                    <span class="nav-label">
+                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="m12 19-7-7 7-7"></path>
+                                            <path d="M19 12H5"></path>
+                                        </svg>
+                                        Article précédent
+                                    </span>
+                                    <span class="nav-title"><?php echo get_the_title($prev_post); ?></span>
+                                </div>
+                            </a>
+                        <?php else : ?>
+                            <div class="nav-spacer"></div>
+                        <?php endif; ?>
+                        
+                        <?php if ($next_post) : ?>
+                            <a href="<?php echo get_permalink($next_post); ?>" class="nav-link nav-next">
+                                <div class="nav-link-inner">
+                                    <span class="nav-label">
+                                        Article suivant
+                                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M5 12h14"></path>
+                                            <path d="m12 5 7 7-7 7"></path>
+                                        </svg>
+                                    </span>
+                                    <span class="nav-title"><?php echo get_the_title($next_post); ?></span>
+                                </div>
+                            </a>
+                        <?php else : ?>
+                            <div class="nav-spacer"></div>
+                        <?php endif; ?>
+                    </div>
+                </nav>
+            </div>
             <?php
-            // Navigation between posts
-            the_post_navigation(array(
-                'prev_text' => '<span class="nav-subtitle">&larr; Article précédent</span>',
-                'next_text' => '<span class="nav-subtitle">Article suivant &rarr;</span>',
-            ));
-            
-            // Comments
-            if (comments_open() || get_comments_number()) :
-                comments_template();
-            endif;
         endwhile;
         ?>
     </div>
