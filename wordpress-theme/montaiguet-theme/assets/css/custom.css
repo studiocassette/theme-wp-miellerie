@@ -1138,7 +1138,7 @@ section {
   gap: 0.5rem;
   color: hsl(var(--muted-foreground));
   font-size: 0.875rem;
-  margin-bottom: 2rem;
+  margin-bottom: 31px; /* EXACT: 31px */
   transition: all 0.3s ease;
 }
 
@@ -1153,21 +1153,21 @@ section {
 
 /* Post header */
 .post-header {
-  margin-bottom: 1.5rem;
+  margin-bottom: 37px; /* EXACT: 37px vers image */
 }
 
 .post-meta-top {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 1.5rem;
+  gap: 10px; /* EXACT: 10px entre badge et date */
+  margin-bottom: 26px; /* EXACT: 26px vers titre */
   flex-wrap: wrap;
 }
 
 .post-category-badge {
   display: inline-flex;
   align-items: center;
-  padding: 0.125rem 0.625rem;
+  padding: 6px 12px; /* EXACT: 6px vertical, 12px horizontal */
   background: hsl(var(--secondary) / 0.2);
   color: hsl(var(--secondary));
   border: none;
@@ -1191,17 +1191,11 @@ section {
 }
 
 .post-title {
-  font-size: clamp(2rem, 5vw, 3rem); /* 32-48px */
+  font-size: 40px; /* EXACT: 40px (pas 48px !) */
   font-weight: 700;
   color: hsl(var(--navy));
   line-height: 1.2;
   margin: 0;
-}
-
-@media (min-width: 1024px) {
-  .post-title {
-    font-size: 3rem; /* 48px fixe sur desktop */
-  }
 }
 
 /* Featured image */
@@ -1227,20 +1221,14 @@ section {
 
 .post-featured-placeholder {
   width: 100%;
-  height: 400px;
+  height: 400px; /* EXACT: 400px fixe */
   background: linear-gradient(135deg, hsl(45, 80%, 85%), hsl(35, 75%, 80%));
   border-radius: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 2rem;
-  margin-top: 1.5rem;
-}
-
-@media (min-width: 768px) {
-  .post-featured-placeholder {
-    height: 480px;
-  }
+  margin-bottom: 60px; /* EXACT: 60px vers contenu */
+  margin-top: 0;
 }
 
 .placeholder-emoji {
@@ -1255,14 +1243,14 @@ section {
 
 /* Post content - Typography */
 .post-content {
-  font-size: 1rem; /* 16px */
+  font-size: 18px; /* EXACT: 18px (pas 16px !) */
   line-height: 1.6;
   color: hsl(var(--muted-foreground));
   max-width: none;
 }
 
 .post-content > * {
-  margin-bottom: 1.25rem;
+  margin-bottom: 20px; /* EXACT: 20px entre lignes */
 }
 
 .post-content > *:first-child {
