@@ -321,11 +321,23 @@
 }
 
 .hero-logo img {
-  height: 180px;
+  height: 144px;
   width: auto;
   filter: drop-shadow(0 10px 20px hsl(var(--foreground) / 0.2));
   margin-bottom: 2rem;
   animation: fadeIn 1s ease-out;
+}
+
+@media (min-width: 768px) {
+  .hero-logo img {
+    height: 176px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-logo img {
+    height: 208px;
+  }
 }
 
 .hero-badge {
@@ -836,11 +848,19 @@ section {
   color: hsl(var(--secondary));
   font-weight: 500;
   font-size: 0.875rem;
-  transition: var(--transition-smooth);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .blog-link:hover {
   gap: 0.75rem;
+}
+
+.blog-link svg {
+  transition: transform 0.3s ease;
+}
+
+.blog-link:hover svg {
+  transform: translateX(4px);
 }
 
 /* === CONTACT SECTION === */
@@ -938,20 +958,21 @@ section {
 
 .btn-submit {
   width: 100%;
-  padding: 1rem;
+  padding: 1.5rem 1rem;
   background: hsl(var(--secondary));
   color: hsl(var(--secondary-foreground));
   border: none;
-  border-radius: 0.5rem;
+  border-radius: 0.75rem;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 1.125rem;
   cursor: pointer;
   transition: var(--transition-smooth);
+  box-shadow: var(--shadow-honey);
 }
 
 .btn-submit:hover {
   background: hsl(var(--honey-gold-dark));
-  box-shadow: var(--shadow-honey);
+  box-shadow: 0 20px 40px -15px hsl(var(--secondary) / 0.4);
   transform: translateY(-2px);
 }
 
